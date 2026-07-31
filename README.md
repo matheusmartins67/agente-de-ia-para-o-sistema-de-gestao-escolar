@@ -1,0 +1,1 @@
+# agente-de-ia-para-o-sistema-de-gestao-escolar
