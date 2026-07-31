@@ -1,0 +1,24 @@
+Tutor Agent listening at http://127.0.0.1:8017
+127.0.0.1 - "GET /api/v1/health HTTP/1.1" 200 -
+127.0.0.1 - "GET /api/v1/health HTTP/1.1" 200 -
+127.0.0.1 - "POST /api/v1/chat HTTP/1.1" 200 -
+127.0.0.1 - "GET / HTTP/1.1" 200 -
+127.0.0.1 - "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - "POST /api/v1/chat HTTP/1.1" 200 -
+127.0.0.1 - "POST /api/v1/chat HTTP/1.1" 200 -
+127.0.0.1 - "POST /api/v1/chat HTTP/1.1" 200 -
+127.0.0.1 - "POST /api/v1/chat HTTP/1.1" 200 -
+127.0.0.1 - "POST /api/v1/chat HTTP/1.1" 200 -
+127.0.0.1 - "POST /api/v1/chat HTTP/1.1" 200 -
+127.0.0.1 - "POST /api/v1/chat HTTP/1.1" 200 -
+127.0.0.1 - "GET / HTTP/1.1" 200 -
+127.0.0.1 - "POST /api/v1/chat HTTP/1.1" 200 -
+127.0.0.1 - "POST /api/v1/chat HTTP/1.1" 200 -
+127.0.0.1 - "GET /api/v1/health HTTP/1.1" 200 -
+127.0.0.1 - "GET / HTTP/1.1" 200 -
+127.0.0.1 - "GET / HTTP/1.1" 200 -
+127.0.0.1 - "GET / HTTP/1.1" 200 -
+127.0.0.1 - "POST /api/v1/chat HTTP/1.1" 200 -
+127.0.0.1 - "GET / HTTP/1.1" 200 -
+127.0.0.1 - "GET / HTTP/1.1" 200 -
+127.0.0.1 - "POST /api/v1/chat HTTP/1.1" 200 -

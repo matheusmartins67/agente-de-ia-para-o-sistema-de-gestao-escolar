@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Acompanhe a Série A do Brasileirão: classificação, jogos e notícias.">
+  <title>Brasileirão | Série A</title>
+  <style>
+    :root { --blue:#0b1f52; --blue2:#12327d; --lime:#d7ff31; --coral:#ff5b4d; --ink:#101626; --muted:#6c7280; --paper:#f5f6fa; --white:#fff; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--paper); color:var(--ink); font-family:Inter,Arial,sans-serif; }
+    a { color:inherit; text-decoration:none; }
+    .top { background:var(--blue); color:white; padding:16px max(24px,calc((100% - 1180px)/2)); display:flex; align-items:center; justify-content:space-between; gap:22px; }
+    .brand { display:flex; align-items:center; gap:11px; font-size:20px; font-weight:900; letter-spacing:-.7px; }
+    .ball { width:31px; height:31px; display:grid; place-items:center; color:var(--blue); background:var(--lime); border-radius:50%; font-size:18px; }
+    nav { display:flex; gap:24px; font-size:14px; font-weight:700; }
+    nav a { opacity:.72; transition:.2s; } nav a:hover,nav a.active { opacity:1; color:var(--lime); }
+    .menu { display:none; background:none; border:0; color:white; font-size:24px; }
+    main { max-width:1180px; margin:auto; padding:34px 24px 56px; }
+    .hero { min-height:264px; padding:38px; overflow:hidden; position:relative; border-radius:24px; color:white; background:linear-gradient(110deg,#10296a,#0c1d50); display:flex; flex-direction:column; justify-content:center; }
+    .hero:after { content:"10"; position:absolute; right:24px; bottom:-100px; font-size:360px; line-height:1; font-weight:900; font-style:italic; color:rgba(215,255,49,.1); }
+    .eyebrow { position:relative; z-index:1; color:var(--lime); font-size:12px; font-weight:900; letter-spacing:1.5px; text-transform:uppercase; }
+    h1 { position:relative; z-index:1; max-width:650px; margin:9px 0; font-size:clamp(34px,5vw,60px); line-height:.98; letter-spacing:-3px; }
+    .hero p { position:relative; z-index:1; margin:4px 0 20px; color:#d6ddf1; font-size:16px; }
+    .tag { position:relative; z-index:1; width:max-content; padding:9px 13px; border-radius:8px; background:var(--lime); color:var(--blue); font-size:13px; font-weight:900; }
+    .section-head { display:flex; justify-content:space-between; align-items:end; gap:16px; margin:35px 0 16px; }
+    h2 { margin:0; font-size:24px; letter-spacing:-1px; } .section-head a { color:var(--blue2); font-weight:800; font-size:14px; }
+    .grid { display:grid; grid-template-columns:1.15fr .85fr; gap:24px; }
+    .card { background:white; border:1px solid #e7e9ef; border-radius:17px; box-shadow:0 3px 14px rgba(16,22,38,.04); }
+    .round { padding:21px; }
+    .round-top { display:flex; justify-content:space-between; align-items:center; padding-bottom:17px; border-bottom:1px solid #eceef3; }
+    .round-top strong { font-size:17px; } .round-top span { background:#e6ebfa; color:var(--blue2); padding:6px 9px; border-radius:6px; font-weight:800; font-size:12px; }
+    .match { display:grid; grid-template-columns:1fr 70px 1fr; align-items:center; padding:16px 0; border-bottom:1px solid #f0f1f4; font-size:14px; font-weight:800; }
+    .match:last-child { border:0; padding-bottom:0; }.team { display:flex; align-items:center; gap:9px; }.team.right { justify-content:flex-end; text-align:right; }.crest { display:grid; place-items:center; width:29px; height:29px; border-radius:50%; color:white; font-size:11px; font-weight:900; }.score { text-align:center; color:var(--muted); font-size:12px; }.score b { display:block; color:var(--ink); font-size:16px; }
+    .table-card { overflow:hidden; }.table-title { padding:20px 21px 12px; display:flex; justify-content:space-between; align-items:center; }.table-title h3 { margin:0; font-size:17px; }.table-title small { color:var(--muted); }
+    table { border-collapse:collapse; width:100%; font-size:13px; } th { padding:9px 20px; background:#f7f8fb; color:var(--muted); text-align:right; font-size:11px; } th:nth-child(2),td:nth-child(2) { text-align:left; } td { padding:11px 20px; text-align:right; border-bottom:1px solid #f0f1f5; } tr:last-child td { border:0; } td:first-child { width:36px; color:var(--muted); } .club { display:flex; align-items:center; gap:8px; font-weight:800; }.mini { width:19px; height:19px; border-radius:5px; }
+    .news { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }.news-card { overflow:hidden; }.news-color { height:104px; padding:15px; display:flex; align-items:flex-end; color:white; font-size:34px; font-weight:900; }.news-body { padding:16px; }.news-body small { color:var(--blue2); font-weight:900; text-transform:uppercase; font-size:10px; letter-spacing:.8px; }.news-body h3 { margin:8px 0 0; font-size:16px; line-height:1.25; }
+    footer { text-align:center; color:var(--muted); font-size:13px; padding:0 24px 30px; }
+    @media (max-width:720px) { nav { display:none; } .menu { display:block; } main { padding:22px 16px 40px; }.hero { min-height:245px; padding:28px; }.grid,.news { grid-template-columns:1fr; }.section-head { margin-top:28px; }.match { grid-template-columns:1fr 55px 1fr; }.match .team { font-size:12px; }.table-card { overflow-x:auto; } }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="#inicio"><span class="ball">⚽</span>BRASILEIRÃO</a>
+    <nav><a class="active" href="#inicio">Início</a><a href="#jogos">Jogos</a><a href="#tabela">Tabela</a><a href="#noticias">Notícias</a></nav>
+    <button class="menu" aria-label="Abrir menu">☰</button>
+  </header>
+  <main id="inicio">
+    <section class="hero">
+      <span class="eyebrow">Campeonato Brasileiro • Série A</span>
+      <h1>A emoção do futebol brasileiro começa aqui.</h1>
+      <p>Resultados, tabela e tudo que movimenta a rodada.</p>
+      <span class="tag">RODADA 12 EM ANDAMENTO</span>
+    </section>
+
+    <div class="section-head" id="jogos"><h2>Jogos da rodada</h2><a href="#">Ver todos os jogos →</a></div>
+    <section class="grid">
+      <article class="card round">
+        <div class="round-top"><strong>Rodada 12</strong><span>AO VIVO</span></div>
+        <div class="match"><div class="team"><span class="crest" style="background:#063b88">CRF</span> Flamengo</div><div class="score"><b>2 — 1</b>2º tempo • 31'</div><div class="team right">Palmeiras <span class="crest" style="background:#19733b">PAL</span></div></div>
+        <div class="match"><div class="team"><span class="crest" style="background:#111">BOT</span> Botafogo</div><div class="score"><b>19:30</b>Hoje</div><div class="team right">Fluminense <span class="crest" style="background:#6a173b">FLU</span></div></div>
+        <div class="match"><div class="team"><span class="crest" style="background:#d11e29">INT</span> Internacional</div><div class="score"><b>21:00</b>Hoje</div><div class="team right">São Paulo <span class="crest" style="background:#df1d2f">SP</span></div></div>
+      </article>
+      <article class="card table-card" id="tabela">
+        <div class="table-title"><h3>Classificação</h3><small>Atualizada agora</small></div>
+        <table><thead><tr><th>#</th><th>Clube</th><th>P</th><th>J</th><th>V</th></tr></thead><tbody>
+          <tr><td>1</td><td><span class="club"><i class="mini" style="background:#19733b"></i>Palmeiras</span></td><td><b>25</b></td><td>11</td><td>8</td></tr>
+          <tr><td>2</td><td><span class="club"><i class="mini" style="background:#063b88"></i>Flamengo</span></td><td><b>24</b></td><td>11</td><td>7</td></tr>
+          <tr><td>3</td><td><span class="club"><i class="mini" style="background:#111"></i>Botafogo</span></td><td><b>22</b></td><td>11</td><td>7</td></tr>
+          <tr><td>4</td><td><span class="club"><i class="mini" style="background:#c71932"></i>Bahia</span></td><td><b>20</b></td><td>11</td><td>6</td></tr>
+        </tbody></table>
+      </article>
+    </section>
+    <div class="section-head" id="noticias"><h2>Últimas notícias</h2><a href="#">Todas as notícias →</a></div>
+    <section class="news">
+      <article class="card news-card"><div class="news-color" style="background:linear-gradient(135deg,#ff584a,#a51d39)">#JOGA<br>JUNTO</div><div class="news-body"><small>Brasileirão</small><h3>Rodada promete grandes duelos na parte de cima da tabela</h3></div></article>
+      <article class="card news-card"><div class="news-color" style="background:linear-gradient(135deg,#19479d,#091a52)">VAI<br>PRA CIMA</div><div class="news-body"><small>Mercado da bola</small><h3>Clubes se movimentam antes da abertura da janela</h3></div></article>
+      <article class="card news-card"><div class="news-color" style="background:linear-gradient(135deg,#7f9f18,#365a06)">É GOL<br>DO BRASIL</div><div class="news-body"><small>Estatísticas</small><h3>Confira quem são os artilheiros do campeonato</h3></div></article>
+    </section>
+  </main>
+  <footer>Brasileirão Série A • Conteúdo demonstrativo</footer>
+</body>
+</html>
